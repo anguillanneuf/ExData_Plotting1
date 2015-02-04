@@ -28,8 +28,10 @@ twodaydata <- data.frame(twodaydata)
 twodaydata$time <- strptime(paste(twodaydata$date, twodaydata$time), 
 		"%Y-%m-%d %H:%M:%S")
 
-# Draw a histogram
+# Draw a histogram in my screen device so I can see
 with(twodaydata, hist(active, col = "red", 
 	main = "Global Active Power", xlab = "Global Active Power (kilowatts)"))
+
+# Save the PNG file of the correct dimension and close the PNG device
 dev.copy(png, width = 480, height = 480, file = "plot1.png")
 dev.off()
