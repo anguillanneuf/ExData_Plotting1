@@ -1,7 +1,10 @@
 # Load the data.table package
 library(data.table)
 
-# Fast read the date variable
+# Download the file to my working directory, and fast read the date variable using fread()
+fileURL <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+download.file(fileURL, destfile = "project.zip")
+unzip("project.zip")
 filetoread <- "household_power_consumption.txt"
 alldates <- fread(filetoread, select=1)
 
